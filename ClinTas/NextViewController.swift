@@ -12,7 +12,8 @@ class NextViewController: UIViewController {
 
     @IBOutlet weak var myCollectionView: UICollectionView!
     
-    var placeHolders: Array<PlaceHolder> = []
+    private var placeHolders: Array<PlaceHolder> = []
+    private var cellImageLoaders = [Int: CellImageLoader]()
     
     deinit {
         print("deinit")
@@ -56,16 +57,23 @@ extension NextViewController : UICollectionViewDataSource, UICollectionViewDeleg
         
         myCell.idLabel.text = String(placeHolders[indexPath.row].id)
         myCell.titleLabel.text = placeHolders[indexPath.row].title
+        myCell.myImageView.image = nil
         
-        let url = URL(string: placeHolders[indexPath.row].thumbnailUrl)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                myCell.myImageView.image = UIImage(data: data!)
-            }
-        }
+        let cellImageLoader = CellImageLoader(url: placeHolders[indexPath.row].thumbnailUrl)
+        cellImageLoader.fetchImage(completionHandler: { (image) in
+            myCell.myImageView.image = image
+        })
+        cellImageLoaders[indexPath.row] = cellImageLoader
         
         return myCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cellImageLoaders[indexPath.row]?.resume()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cellImageLoaders[indexPath.row]?.suspend()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -16,6 +16,7 @@
 		FB6CE87522279A4400152BC5 /* PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6CE87422279A4400152BC5 /* PlaceHolder.swift */; };
 		FB6CE87722279A6500152BC5 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6CE87622279A6500152BC5 /* ApiManager.swift */; };
 		FB6CE87922279AA000152BC5 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6CE87822279AA000152BC5 /* NextViewController.swift */; };
+		FB6CE87D22280DE700152BC5 /* CellImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6CE87C22280DE700152BC5 /* CellImageLoader.swift */; };
 		FB8269228E7FD1AA78987C83 /* Pods_ClinTas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5103FE7FFE60BD881B8801E1 /* Pods_ClinTas.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		FB6CE87422279A4400152BC5 /* PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolder.swift; sourceTree = "<group>"; };
 		FB6CE87622279A6500152BC5 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		FB6CE87822279AA000152BC5 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		FB6CE87C22280DE700152BC5 /* CellImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				FB6CE87222279A2F00152BC5 /* MyCell.swift */,
 				FB6CE87422279A4400152BC5 /* PlaceHolder.swift */,
 				FB6CE87622279A6500152BC5 /* ApiManager.swift */,
+				FB6CE87C22280DE700152BC5 /* CellImageLoader.swift */,
 			);
 			path = ClinTas;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				FB6CE87322279A2F00152BC5 /* MyCell.swift in Sources */,
 				FB6CE87922279AA000152BC5 /* NextViewController.swift in Sources */,
+				FB6CE87D22280DE700152BC5 /* CellImageLoader.swift in Sources */,
 				FB6CE8632227995300152BC5 /* ViewController.swift in Sources */,
 				FB6CE87722279A6500152BC5 /* ApiManager.swift in Sources */,
 				FB6CE8612227995300152BC5 /* AppDelegate.swift in Sources */,
