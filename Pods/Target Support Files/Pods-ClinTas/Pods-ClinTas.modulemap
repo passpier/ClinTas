@@ -1,0 +1,6 @@
+framework module Pods_ClinTas {
+  umbrella header "Pods-ClinTas-umbrella.h"
+
+  export *
+  module * { export * }
+}
